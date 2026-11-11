@@ -18,7 +18,7 @@ highlights:
     label: Hands-on build training on a composite panel
   - value: "6 steps"
     label: Locate, drill, ream, sand, fasten, seal
-  - value: "VP"
+  - value: "2 VP's"
     label: Invited us to present the program and its results
 
 gallery:
