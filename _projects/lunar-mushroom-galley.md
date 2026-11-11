@@ -6,9 +6,9 @@ status: complete
 featured: 1
 date: 2025-10-15            # CONFIRM: competition date (used for sorting)
 role: CAD lead and prototype builder
-team: Student team           # CONFIRM: team size, e.g. "Team of 5"
+team: Team of 5
 timeframe: Fall 2025         # CONFIRM
-tools: [Fusion 360, 3D printing, Microcontroller with LCD and keypad, LED grow lighting]   # CONFIRM
+tools: [Fusion 360, 3D printing, Arduino, LCD & keypad, Temperature & humidity sensor, LED grow lighting]
 cover: cad-render.jpg
 hero: first-place.jpg
 hero_alt: The team with the first-place trophy and the working prototype.
@@ -16,6 +16,8 @@ hero_alt: The team with the first-place trophy and the working prototype.
 highlights:
   - value: 1st
     label: Place, Innovation Works Challenge 2025
+  - value: "5"
+    label: Team members
   - value: CAD + build
     label: My part, from model to working prototype
 
@@ -48,7 +50,7 @@ The concept was a team effort. The design work covered:
 
 ## My part
 
-I built the CAD model of the full system and then built the physical prototype. The prototype has an enclosure with LED grow lighting, a vertical growing column, and an LCD and keypad for selecting grow profiles.
+On a team of five, I built the CAD model of the full system and then built the working prototype. It runs on an Arduino that reads a temperature and humidity sensor, controls the LED grow lights, and drives an LCD and keypad for setting it up.
 
 ## Result
 

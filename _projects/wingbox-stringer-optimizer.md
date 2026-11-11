@@ -5,7 +5,7 @@ category: school
 status: complete
 featured: 4
 date: 2025-12-07
-role: Wrote the stringer-placement program; drafted the cross-section drawing   # CONFIRM
+role: Primary programmer; proposed the MATLAB search approach; drafted the cross-section drawing
 team: 4-person team (Group 9)
 timeframe: Fall 2025 · AE 525
 tools: [MATLAB, Fusion 360, SkyCiv, Balsa & basswood, Wood glue]
@@ -66,7 +66,7 @@ AE 525's wingbox contest, sponsored by Airbus: design and build the lightest sem
 
 The scoring rubric favored exactly **8 stringers** and as few ribs as possible, and it penalized stacked or adjacent stringers. With the count fixed, the question was where to put them.
 
-I wrote a MATLAB program that placed the 8 stringers at random positions on the top and bottom skins, computed the section properties, and calculated tip deflection for each layout. After more than 30 million random layouts, we kept the one with the lowest deflection *w*. It splits the stringers four on top and four on the bottom, which raised bending stiffness without adding material.
+I proposed solving it by brute force in MATLAB and wrote the program. It placed the 8 stringers at random positions on the top and bottom skins, computed the section properties, and calculated tip deflection for each layout. After more than 30 million random layouts, we kept the one with the lowest deflection *w*. It splits the stringers four on top and four on the bottom, which raised bending stiffness without adding material.
 
 The team then built three more programs on that layout:
 

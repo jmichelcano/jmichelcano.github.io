@@ -61,7 +61,7 @@ Instead of rebuilding the seized engine, I found a donor: another wrecked Q50 wi
 
 ## Result
 
-The car runs and drives on the donor engine.
+The car runs and drives on the donor engine, a 3.0L VR30DDTT twin-turbo V6 driving all four wheels.
 
-<!-- TODO: add one or two sentences on the hardest part of the swap and how you solved it. -->
+The hardest part wasn't any single big job. It was the small details: keeping track of every fastener and torquing each one to spec. A few problems showed up after the swap: a CV axle failed, the shifter linkage worked loose, and putting off an alignment cost me a full set of tires. I diagnosed and fixed each one, and learned to treat the alignment as part of the job.
 
