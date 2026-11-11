@@ -1,0 +1,37 @@
+# Experience shown on the home page, newest first.
+# Keep internship descriptions HIGH LEVEL: no program names, part numbers,
+# drawings, or customer aircraft details unless your employer has approved it.
+
+- role: Structural Engineering Intern
+  org: J.B. Dwerlkotte Associates, Inc.
+  when: Aug 2026 – Present
+  where: Wichita, KS
+  summary: >-
+    Structural substantiation for FAA certification of business jet and
+    turboprop modifications: fastener and joint analysis, margins of safety,
+    and beam analysis, working directly with the DER.
+
+- role: Manufacturing Process Engineering Intern
+  org: Northrop Grumman
+  when: Summer 2026          # CONFIRM dates
+  where: Palmdale, CA
+  # TODO: replace with one high-level line on what you worked on
+  summary: >-
+    Manufacturing Process Engineering team.
+
+- role: Subsystems Lead, Design/Build/Fly
+  org: WSU AIAA
+  when: 2026–27 season
+  where: Wichita State University
+  summary: >-
+    Leads a four-person subsystems group (payload, avionics and electronics)
+    on a roughly 16-person competition aircraft team. Team member in 2025–26,
+    working on manufacturing.
+
+- role: Treasurer
+  org: WSU AIAA Chapter
+  when: Current
+  where: Wichita State University
+  summary: >-
+    Manages the chapter budget, including the funding request to Student
+    Government.

@@ -1,0 +1,14 @@
+<footer class="site-footer" id="contact">
+  <div class="wrap">
+    <p class="footer-big display" aria-hidden="true">{{ site.title }}</p>
+    <div class="footer-row">
+      <ul class="footer-links">
+        {% if site.author.linkedin %}<li><a href="{{ site.author.linkedin }}" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a></li>{% endif %}
+        {% if site.author.github %}<li><a href="https://github.com/{{ site.author.github }}" rel="noopener">GitHub <span aria-hidden="true">↗</span></a></li>{% endif %}
+        {% if site.author.resume %}<li><a href="{{ site.author.resume | relative_url }}">Resume (PDF) <span aria-hidden="true">↗</span></a></li>{% endif %}
+        {% if site.author.email != "" %}<li><span class="mono">{{ site.author.email }}</span></li>{% endif %}
+      </ul>
+      <p class="mono faint">{{ site.title }} · {{ site.tagline }}</p>
+    </div>
+  </div>
+</footer>

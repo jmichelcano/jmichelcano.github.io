@@ -1,0 +1,110 @@
+---
+layout: default
+---
+{% assign media = '/assets/projects/' | append: page.slug | append: '/' %}
+{% assign cat = site.project_categories | where: "key", page.category | first %}
+{% assign hero = page.hero | default: page.cover %}
+<article class="project">
+  <header class="p-hero{% if page.hero_style == 'drawing' %} is-drawing{% endif %}">
+    {% if hero %}
+    <div class="p-hero-media">
+      <img src="{{ media | append: hero | relative_url }}" alt="{{ page.hero_alt | default: page.title | escape }}" data-parallax>
+    </div>
+    {% endif %}
+    <div class="wrap p-hero-inner">
+      <a class="back mono" href="{{ '/projects/' | relative_url }}"><span aria-hidden="true">←</span> Project index</a>
+      <p class="kicker">{{ cat.label | default: page.category }} · {{ page.date | date: "%Y" }} · {% if page.status == "in-progress" %}<span class="accent">In progress</span>{% else %}Complete{% endif %}</p>
+      <h1 class="display p-title">{{ page.title }}</h1>
+    </div>
+  </header>
+
+  <section class="wrap p-intro">
+    <p class="p-summary">{{ page.summary }}</p>
+    <dl class="spec-grid">
+      {% if page.role %}<div><dt>Role</dt><dd>{{ page.role }}</dd></div>{% endif %}
+      {% if page.team %}<div><dt>Team</dt><dd>{{ page.team }}</dd></div>{% endif %}
+      {% if page.timeframe %}<div><dt>Timeframe</dt><dd>{{ page.timeframe }}</dd></div>{% endif %}
+      {% if page.tools %}<div><dt>Tools</dt><dd>{{ page.tools | join: " · " }}</dd></div>{% endif %}
+    </dl>
+  </section>
+
+  {% if page.highlights %}
+  <section class="wrap stats" aria-label="Key numbers">
+    {% for h in page.highlights %}
+    <div class="stat" data-reveal>
+      <p class="stat-value display" data-count>{{ h.value }}</p>
+      <p class="stat-label">{{ h.label }}</p>
+    </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if page.model %}
+  <section class="wrap model-section" aria-label="Interactive 3D model" data-reveal>
+    <div class="model-stage" data-model="{{ media | append: page.model | relative_url }}"{% if page.model_poster %} style="background-image:url('{{ media | append: page.model_poster | relative_url }}')"{% endif %}>
+      <button type="button" class="btn btn-primary" data-model-load>Load interactive 3D</button>
+      <p class="mono faint">Drag to rotate · scroll to zoom</p>
+    </div>
+  </section>
+  {% endif %}
+
+  <section class="wrap p-body">
+    <div class="prose">
+      {{ content }}
+    </div>
+  </section>
+
+  {% if page.videos %}
+  <section class="wrap media-section" aria-label="Video">
+    <h2 class="section-label mono">Video</h2>
+    <div class="video-grid">
+      {% for v in page.videos %}
+      <figure class="video" data-reveal>
+        <video src="{{ media | append: v.file | relative_url }}"{% if v.poster %} poster="{{ media | append: v.poster | relative_url }}"{% endif %} {% if v.loop %}autoplay loop muted playsinline{% else %}controls muted playsinline preload="metadata"{% endif %}></video>
+        {% if v.caption %}<figcaption>{{ v.caption }}</figcaption>{% endif %}
+      </figure>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if page.gallery %}
+  <section class="wrap media-section" aria-label="Photos">
+    <h2 class="section-label mono">Photos <span class="count">{{ page.gallery | size }}</span></h2>
+    <div class="gallery" data-gallery>
+      {% for g in page.gallery %}
+      <figure data-reveal>
+        <a href="{{ media | append: g.file | relative_url }}" data-lightbox>
+          <img src="{{ media | append: g.file | relative_url }}" alt="{{ g.caption | escape }}" loading="lazy">
+        </a>
+        {% if g.caption %}<figcaption>{{ g.caption }}</figcaption>{% endif %}
+      </figure>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% assign nxt = page.next | default: page.previous %}
+  {% if nxt %}
+  <nav class="p-next" aria-label="Next project">
+    <a href="{{ nxt.url | relative_url }}">
+      {% if nxt.cover %}<img src="{{ '/assets/projects/' | append: nxt.slug | append: '/' | append: nxt.cover | relative_url }}" alt="" loading="lazy">{% endif %}
+      <span class="wrap p-next-inner">
+        <span class="kicker">{% if page.next %}Next project{% else %}Previous project{% endif %}</span>
+        <span class="display p-next-title">{{ nxt.title }} <span aria-hidden="true">→</span></span>
+      </span>
+    </a>
+  </nav>
+  {% endif %}
+</article>
+
+<dialog class="lightbox" data-lightbox-dialog aria-label="Photo viewer">
+  <figure class="lb-figure">
+    <img alt="">
+    <figcaption></figcaption>
+  </figure>
+  <button type="button" class="lb-btn lb-close" data-lb="close" aria-label="Close">✕</button>
+  <button type="button" class="lb-btn lb-prev" data-lb="prev" aria-label="Previous photo">←</button>
+  <button type="button" class="lb-btn lb-next" data-lb="next" aria-label="Next photo">→</button>
+  <p class="lb-count mono"></p>
+</dialog>
