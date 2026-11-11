@@ -1,0 +1,63 @@
+# ─────────────────────────────────────────────────────────────
+#  SITE SETTINGS — the only file you need for name, links, etc.
+#  After editing this file, GitHub rebuilds the site in ~1 minute.
+# ─────────────────────────────────────────────────────────────
+title: Jose Michel
+tagline: Aerospace Engineering · Wichita State University
+description: >-
+  Projects by Jose Michel, an aerospace engineering student at Wichita State
+  University: competition builds, structures work, fabrication, and repairs.
+
+# Change to your custom domain once it is live, e.g. "https://josemichel.com"
+url: "https://jmichelcano.github.io"
+baseurl: ""
+
+author:
+  name: Jose Michel
+  email: ""          # optional; leave "" to hide it on the site
+  linkedin: "https://www.linkedin.com/in/josemichelcano"   # CONFIRM this is yours
+  github: "jmichelcano"
+  resume: "/assets/resume.pdf"   # put your resume PDF at assets/resume.pdf
+
+# Filter chips on the Projects page, in this order.
+project_categories:
+  - key: competition
+    label: Competition
+  - key: work
+    label: Work
+  - key: school
+    label: School
+  - key: personal
+    label: Personal
+  - key: volunteering
+    label: Volunteering
+
+# ── You normally don't need to touch anything below this line ──
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+exclude:
+  - README.md
+  - tools
+  - templates
+  - Gemfile
+  - Gemfile.lock
+  - "*.py"
