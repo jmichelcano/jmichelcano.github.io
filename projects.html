@@ -1,0 +1,56 @@
+---
+title: Projects
+permalink: /projects/
+---
+<section class="wrap page-head">
+  <p class="kicker">Index</p>
+  <h1 class="display page-title">Projects</h1>
+  <div class="filters" data-filters role="group" aria-label="Filter projects by category">
+    <button type="button" data-filter="all" aria-pressed="true">All <span class="count">{{ site.projects | size }}</span></button>
+    {% for c in site.project_categories %}
+      {% assign n = site.projects | where: "category", c.key | size %}
+      {% if n > 0 %}<button type="button" data-filter="{{ c.key }}" aria-pressed="false">{{ c.label }} <span class="count">{{ n }}</span></button>{% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+{% assign projects = site.projects | sort: "date" | reverse %}
+<section class="wrap viewer" data-viewer>
+  <ol class="index" aria-label="Project list">
+    {% for p in projects %}
+    {% assign cat = site.project_categories | where: "key", p.category | first %}
+    <li class="index-row" data-category="{{ p.category }}" data-pv="{{ forloop.index0 }}">
+      <a href="{{ p.url | relative_url }}">
+        <span class="ix-num mono">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+        {% if p.cover %}<img class="ix-thumb" src="{{ '/assets/projects/' | append: p.slug | append: '/' | append: p.cover | relative_url }}" alt="" loading="lazy">{% endif %}
+        <span class="ix-main">
+          <span class="ix-title">{{ p.title }}</span>
+          <span class="ix-meta mono">{{ cat.label | default: p.category }} · {{ p.date | date: "%Y" }}{% if p.status == "in-progress" %} · <span class="accent">In progress</span>{% endif %}</span>
+        </span>
+        <span class="ix-arrow" aria-hidden="true">→</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ol>
+
+  <aside class="preview" aria-hidden="true">
+    {% for p in projects %}
+    <div class="pv" data-pv="{{ forloop.index0 }}"{% unless forloop.first %} hidden{% endunless %}>
+      <div class="pv-media">
+        {% if p.cover %}<img src="{{ '/assets/projects/' | append: p.slug | append: '/' | append: p.cover | relative_url }}" alt="" loading="lazy">{% endif %}
+      </div>
+      <p class="pv-summary">{{ p.summary }}</p>
+      <dl class="spec-list">
+        {% if p.role %}<div><dt>Role</dt><dd>{{ p.role }}</dd></div>{% endif %}
+        {% if p.team %}<div><dt>Team</dt><dd>{{ p.team }}</dd></div>{% endif %}
+        {% if p.tools %}<div><dt>Tools</dt><dd>{{ p.tools | join: " · " }}</dd></div>{% endif %}
+      </dl>
+      {% if p.highlights %}
+      <dl class="pv-stats">
+        {% for h in p.highlights limit: 3 %}<div><dd>{{ h.value }}</dd><dt>{{ h.label }}</dt></div>{% endfor %}
+      </dl>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </aside>
+</section>

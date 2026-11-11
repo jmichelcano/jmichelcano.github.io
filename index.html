@@ -1,0 +1,86 @@
+---
+title: Jose Michel
+body_class: is-home
+---
+<section class="hero" data-hero>
+  <canvas class="hero-canvas" data-wingbox aria-hidden="true"></canvas>
+  <div class="wrap hero-inner">
+    <p class="kicker"><span class="kicker-dot"></span>{{ site.tagline }}</p>
+    <h1 class="display hero-title">Jose<br>Michel</h1>
+    <p class="hero-lede">Aerospace engineering student. I like work where the analysis has to hold up on real hardware: certification structures at my internship, competition builds with my team, and whatever is on jack stands in my garage.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="{{ '/projects/' | relative_url }}">Explore the work</a>
+      {% if site.author.resume %}<a class="btn" href="{{ site.author.resume | relative_url }}">Resume</a>{% endif %}
+    </div>
+  </div>
+  <div class="wrap hero-foot">
+    <a class="fig-caption mono" href="{{ '/projects/wingbox-stringer-optimizer/' | relative_url }}">Fig. 1 · AE 525 wingbox, to scale · 17 ribs · 8 stringers · 0.46 lb <span aria-hidden="true">→</span></a>
+    <span class="scroll-cue mono" aria-hidden="true">Scroll</span>
+  </div>
+</section>
+
+<section class="wrap glance" aria-label="At a glance" data-reveal>
+  <dl class="glance-grid">
+    <div><dt>Major</dt><dd>Aerospace Engineering</dd></div>
+    <div><dt>Minors</dt><dd>Mathematics, Computer Science</dd></div>
+    <div><dt>Now</dt><dd>Structural Engineering Intern, J.B. Dwerlkotte Associates</dd></div>
+    <div><dt>Tools</dt><dd>MATLAB · Python · Fusion · SkyCiv · 3D printing · Waterjet · Plasma CNC</dd></div>
+  </dl>
+</section>
+
+<section class="chapters" aria-labelledby="featured-h">
+  <div class="wrap section-head" data-reveal>
+    <p class="kicker">Selected work</p>
+    <h2 id="featured-h" class="display section-title">Featured</h2>
+  </div>
+  {% assign featured = site.projects | where_exp: "p", "p.featured" | sort: "featured" %}
+  {% for p in featured %}
+  {% assign cat = site.project_categories | where: "key", p.category | first %}
+  {% assign img = p.hero | default: p.cover %}
+  <article class="chapter{% if p.hero_style == 'drawing' %} is-drawing{% endif %}" data-reveal>
+    <a class="chapter-link" href="{{ p.url | relative_url }}">
+      <div class="chapter-media">
+        <img src="{{ '/assets/projects/' | append: p.slug | append: '/' | append: img | relative_url }}" alt="" loading="lazy" data-parallax>
+      </div>
+      <div class="wrap chapter-body">
+        <p class="kicker">{{ cat.label | default: p.category }} · {{ p.date | date: "%Y" }}{% if p.status == "in-progress" %} · <span class="accent">In progress</span>{% endif %}</p>
+        <h3 class="display chapter-title">{{ p.title }}</h3>
+        <p class="chapter-summary">{{ p.summary }}</p>
+        {% if p.highlights %}
+        <dl class="chapter-stats">
+          {% for h in p.highlights limit: 3 %}<div><dt>{{ h.label }}</dt><dd>{{ h.value }}</dd></div>{% endfor %}
+        </dl>
+        {% endif %}
+        <span class="link-arrow">View project <span aria-hidden="true">→</span></span>
+      </div>
+    </a>
+  </article>
+  {% endfor %}
+</section>
+
+<section class="wrap band" data-reveal>
+  <p class="band-text display">Every project, one index. Filter by competition, school, work, or personal.</p>
+  <a class="btn btn-primary" href="{{ '/projects/' | relative_url }}">Open the project index</a>
+</section>
+
+<section class="wrap experience" id="experience" aria-labelledby="exp-h">
+  <div class="exp-head" data-reveal>
+    <p class="kicker">Experience</p>
+    <h2 id="exp-h" class="display section-title">Experience &amp; leadership</h2>
+  </div>
+  <ol class="timeline">
+    {% for e in site.data.experience %}
+    <li data-reveal>
+      <p class="tl-when mono">{{ e.when }}</p>
+      <div class="tl-body">
+        <h3>{{ e.role }}</h3>
+        <p class="tl-org">{{ e.org }}{% if e.where %} · {{ e.where }}{% endif %}</p>
+        <p class="tl-summary">{{ e.summary }}</p>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+<script src="{{ '/assets/js/hero-wingbox.js' | relative_url }}" defer></script>
