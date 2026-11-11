@@ -8,7 +8,7 @@ date: 2025-12-07
 role: Wrote the stringer-placement program; drafted the cross-section drawing   # CONFIRM
 team: 4-person team (Group 9)
 timeframe: Fall 2025 · AE 525
-tools: [MATLAB, Fusion 360, SkyCiv]
+tools: [MATLAB, Fusion 360, SkyCiv, Balsa & basswood, Wood glue]
 cover: team-wingbox.jpg
 hero: cross-section-drawing.jpg
 hero_style: drawing        # shows a white-background drawing as light lines on dark
@@ -19,10 +19,15 @@ highlights:
     label: Of 18 teams, with the second-highest design score
   - value: "0.46 lb"
     label: Final weight, against a 1.00 lb limit
-  - value: "26.08 lbf"
-    label: Predicted failure load, against a 20 lbf minimum
+  - value: "19.70 lbf"
+    label: Measured failure load (26.08 lbf predicted)
   - value: "30M+"
     label: Random stringer layouts evaluated
+
+videos:
+  - file: load-test.mp4
+    poster: load-test-poster.jpg
+    caption: Load test in the Flight Structures Lab. The root is potted and clamped, and the tip load P bends the box upward.
 
 gallery:
   - file: team-wingbox.jpg
@@ -31,10 +36,24 @@ gallery:
     caption: Final cross-section. Four stringers on each skin, placed by the optimizer.
   - file: rib-layout.jpg
     caption: Fusion 360 model. 17 ribs, spaced 1.5 in at the fixed end and opening to 4 in toward the free end.
+  - file: 01-materials-weighed.jpg
+    caption: Every skin, spar, stringer, and rib weighed before assembly.
+  - file: 02-rib-on-scale.jpg
+    caption: A single lightened rib at 0.00285 lb.
+  - file: 03-gluing-in-jig.jpg
+    caption: Ribs and spars glued up in a clamped jig, with the skins and stringers laid out next to it.
+  - file: 04-clamped-overnight.jpg
+    caption: Bottom skin bonded under weighted boards and clamps.
+  - file: 05-rib-skeleton.jpg
+    caption: The rib and spar skeleton before the top skin went on.
+  - file: 06-skinned-box.jpg
+    caption: Skinned and labeled, with the four top stringers on the outside of the skin.
   - file: load-cases.jpg
     caption: The three required load cases. A 2 lb dead load Q at the trailing edge, plus a tip load P of 0 lbf, 20 lbf, and the maximum the box can carry.
   - file: skyciv-check.jpg
     caption: Moments of inertia checked independently in SkyCiv, for the curved top-skin arc and the full section.
+  - file: 07-results-board.jpg
+    caption: Predicted (blue) and measured (red) results for every team. Group 9 is the last row on the left.
   - file: results-chart.jpg
     caption: Final total scores for all 18 groups. Group 9 scored 223.32, fourth overall.
 ---
@@ -57,20 +76,18 @@ The team then built three more programs on that layout:
 
 We modeled the section in Fusion 360 and checked the moments of inertia in SkyCiv.
 
+## Building it
+
+We weighed every part before assembly, glued the ribs and spars in a clamped jig, then bonded the skins and stringers. The finished box weighed 0.46 lb: 0.31 lb of wood plus 0.15 lb of glue.
+
 ## Result
 
 We placed **4th of 18 teams** with a total score of 223.32, and earned the **second-highest design score** in the class (136.11).
 
-Our predictions:
-
-| Load case (Q = 2 lb) | Tip deflection *w* | Twist *θ* |
+| Measurement | Predicted | Measured |
 |---|---|---|
-| P = 0 | −0.41 in | 0.2° |
-| P = 20 lbf | 3.70 in | 2.4° |
-| P = 26.08 lbf (predicted failure) | 4.95 in | 3.1° |
+| Tip deflection, Q = 2 lb only | −0.41 in | −0.63 in |
+| Tip deflection, Q + P | 3.70 in | 5.76 in |
+| Failure load P | 26.08 lbf | 19.70 lbf |
 
-- **Weight:** 0.46 lb assembled, under the 1.00 lb limit. That is 0.31 lb of parts plus 0.15 lb of adhesive.
-- **Predicted failure:** 26.08 lbf, when a top-skin basswood stringer reaches its compression limit.
-- **Ribs:** 17, packed tighter near the fixed end to resist skin buckling and spaced wider toward the tip to save weight.
-
-<!-- TODO: if the box was tested to failure, add the actual failure load and how it compared with the 26.08 lbf prediction. -->
+The box failed at 19.70 lbf, 25% below our prediction and just short of the 20 lbf target, and it deflected more than we predicted. Our analysis assumed perfect bonds between the skins, spars, and stringers and ignored glue and part imperfections. The test showed how much those assumptions matter in a glued wood structure. Next time I would build and test a short section early to measure real joint stiffness, and use it to calibrate the model.
