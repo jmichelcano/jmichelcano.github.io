@@ -10,6 +10,9 @@ team: Small volunteer team
 timeframe: "2026"
 tools: [X-Plane 12, Custom PC, CAD, 3D printing, HOTAS throttle & sidestick, Rudder pedals, LED lighting, Surround sound]
 cover: 10-fighter-cockpit-view.jpg
+model: fuel-panel.glb
+model_poster: 06-fuel-panel.jpg
+model_caption: "My CAD model of the fuel panel: 127 × 127 mm (5 × 5 in), 6.35 mm thick, printed in gray and black."
 hero_alt: X-Plane 12 cockpit view on the simulator's main display, lined up on a runway at dusk.
 
 highlights:
@@ -67,7 +70,7 @@ I worked with a small volunteer team to rebuild it into a working simulator:
 - Installed a new PC that runs X-Plane 12.
 - Mounted a 55-inch main display in front of the cockpit and a second screen as an instructor station.
 - Set up a HOTAS throttle and sidestick plus rudder pedals.
-- Modeled a custom fuel panel in CAD and 3D printed it for the center pedestal.
+- Modeled a custom fuel panel in CAD and 3D printed it for the center pedestal. You can rotate the model above.
 - Added console panels, guarded switches, interior LED lighting, and surround-sound speakers so the cockpit looks and sounds closer to the real thing.
 
 ## Making it usable without me

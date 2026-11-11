@@ -45,6 +45,7 @@ layout: default
       <button type="button" class="btn btn-primary" data-model-load>Load interactive 3D</button>
       <p class="mono faint">Drag to rotate · scroll to zoom</p>
     </div>
+    {% if page.model_caption %}<p class="model-caption">{{ page.model_caption }}</p>{% endif %}
   </section>
   {% endif %}
 

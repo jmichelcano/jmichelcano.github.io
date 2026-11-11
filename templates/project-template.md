@@ -24,6 +24,7 @@ cover: cover.jpg           # photo used on the card and at the top of the page
 # hero_style: drawing     # optional: for a white-background drawing/render, shows it as light lines on dark
 # model: part.glb          # optional: interactive 3D model (see README, section 7)
 # model_poster: part.jpg   # optional: still image shown before the 3D model loads
+# model_caption: "..."     # optional: line under the 3D viewer
 
 # Optional big numbers under the title block (1 to 4 of them)
 highlights:
