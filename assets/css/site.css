@@ -186,17 +186,19 @@ h1, h2, h3 { text-wrap: balance; font-weight: 700; }
 .exp-head { display: flex; flex-direction: column; gap: 14px; align-self: start; position: sticky; top: 104px; }
 .exp-head .section-title { font-size: clamp(2.4rem, 5vw, 4.4rem); }
 .timeline { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line-strong); }
-.timeline li { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 6px 24px; padding-block: 28px; border-bottom: 1px solid var(--line); }
+.timeline > li { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 6px 24px; padding-block: 28px; border-bottom: 1px solid var(--line); }
 .tl-when { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); padding-top: 6px; }
 .tl-body { display: flex; flex-direction: column; gap: 6px; }
 .tl-body h3 { font-size: 1.35rem; font-stretch: 110%; letter-spacing: -0.005em; }
 .tl-org { color: var(--ink); font-weight: 500; }
 .tl-summary { color: var(--muted); }
+.tl-highlights { margin: 6px 0 0; padding-left: 1.1em; color: var(--muted); font-size: 0.95rem; display: flex; flex-direction: column; gap: 6px; }
+.tl-highlights li::marker { color: var(--accent); }
 @media (max-width: 900px) {
   .experience { grid-template-columns: 1fr; }
   .exp-head { position: static; }
 }
-@media (max-width: 560px) { .timeline li { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .timeline > li { grid-template-columns: 1fr; } }
 
 /* ── Footer ──────────────────────────────────────── */
 .site-footer { margin-top: clamp(96px, 12vw, 180px); border-top: 1px solid var(--line); overflow: hidden; }

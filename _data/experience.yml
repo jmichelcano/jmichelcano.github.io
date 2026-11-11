@@ -1,23 +1,32 @@
-# Experience shown on the home page, newest first.
-# Keep internship descriptions HIGH LEVEL: no program names, part numbers,
-# drawings, or customer aircraft details unless your employer has approved it.
+# Experience shown on the home page, newest first. Mirrors LinkedIn.
+# Fields: role, org, when, where, summary (optional), highlights (optional list).
+# Keep internship descriptions at the level already public on LinkedIn.
 
 - role: Structural Engineering Intern
-  org: J.B. Dwerlkotte Associates, Inc.
-  when: Aug 2026 – Present
+  org: J.B. Dwerlkotte Associates, Inc. (JBDA)
+  when: Sep 2026 – Present
   where: Wichita, KS
   summary: >-
     Structural substantiation for FAA certification of business jet and
-    turboprop modifications: fastener and joint analysis, margins of safety,
-    and beam analysis, working directly with the DER.
+    turboprop modifications (Challenger, Falcon, King Air), working directly
+    with the DER.
+  highlights:
+    - Author and co-author DER-approved Part 23/25 reports (FAA Forms 8110-3 and 8100-9), written as load-path narratives from the installation into primary structure.
+    - Substantiate skin doublers, electric pocket doors, galley modifications, flight computers, ELTs, and cockpit switches.
+    - Analyze fasteners, inserts, doublers, skins, mounts, and honeycomb panels in tension, shear, and combined loading at ultimate, limit, and gust loads, with special factors per §25.619 and §25.625.
 
 - role: Manufacturing Process Engineering Intern
   org: Northrop Grumman
-  when: Summer 2026          # CONFIRM dates
+  when: Summers 2023 – 2026
   where: Palmdale, CA
   summary: >-
-    Manufacturing Process Engineering team, supporting production on the
-    F-35 program and other programs.
+    Four summers on the Manufacturing Process Engineering team, supporting
+    F-35, HALE, and classified programs.
+  highlights:
+    - "2026: Presented a new rework process to VPs that cut rework time 98% and secured $250K in additional SOW funding. Modeled and mass-produced custom tool cases, avoiding $100K+ in costs."
+    - "2025: Improved manufacturing processes for $500K+ in yearly savings in labor, tooling, and calibration. Built new training methods for tooling teams, with an estimated 80% increase in retention."
+    - "2024: Designed and implemented a new composite processing and rework process. Cost-savings initiatives worth $200K+ per year."
+    - "2023: Introduced a replacement tool with $100K+ in lifetime savings, and reviewed 10+ process work instructions for compliance."
 
 - role: Subsystems Lead, Design/Build/Fly
   org: WSU AIAA
@@ -35,3 +44,21 @@
   summary: >-
     Manages the chapter budget, including the funding request to Student
     Government.
+
+- role: Project Innovation Hub Lab Mentor
+  org: Wichita State University
+  when: Jan 2025 – Aug 2026
+  where: Wichita, KS
+  summary: >-
+    Trained students to use the lab's 3D printers, CNC plasma cutter, waterjet,
+    wood mills, and sandblasters safely, and helped them with Fusion 360 CAD,
+    slicing, and CNC programming.
+
+- role: Undergraduate Research Assistant
+  org: NASA in Kansas, Jumpstart Program
+  when: Feb 2023 – Feb 2024
+  where: Wichita, KS
+  summary: >-
+    Helped develop C++ software for use in space as part of CubeSat research
+    and development, and collected and interpreted data during mission control
+    simulations.
