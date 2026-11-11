@@ -146,6 +146,17 @@
       });
     }
 
+    /* Copy-to-clipboard buttons (e.g. email on the About page) */
+    $$("[data-copy]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var text = btn.getAttribute("data-copy"), label = btn.textContent;
+        var done = function () { btn.textContent = "Copied"; setTimeout(function () { btn.textContent = label; }, 1600); };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done, function () { window.prompt("Copy this email:", text); });
+        } else { window.prompt("Copy this email:", text); }
+      });
+    });
+
     /* Optional 3D model: loads the viewer only when asked */
     $$("[data-model-load]").forEach(function (btn) {
       btn.addEventListener("click", function () {

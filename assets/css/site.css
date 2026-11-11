@@ -94,7 +94,10 @@ h1, h2, h3 { text-wrap: balance; font-weight: 700; }
 .nav a:hover, .nav a[aria-current="page"] { color: var(--ink); }
 .nav .nav-cta { color: var(--ink); border: 1px solid var(--line-strong); border-radius: 999px; padding: 7px 14px; }
 .nav .nav-cta:hover { border-color: var(--ink); }
-@media (max-width: 440px) { .nav { gap: 14px; } .nav a[href$="#experience"] { display: none; } }
+@media (max-width: 520px) {
+  .nav { gap: 14px; } .nav a[href$="#experience"] { display: none; }
+  .mark { font-size: 0; gap: 0; } .mark-dot { width: 14px; height: 14px; }
+}
 
 /* ── Hero (home) ──────────────────────────────────── */
 .hero {
@@ -331,6 +334,26 @@ figcaption { font-size: 0.86rem; color: var(--muted); line-height: 1.45; }
 .p-next-inner { display: flex; flex-direction: column; gap: 14px; padding-bottom: 44px; }
 .p-next-title { font-size: clamp(2rem, 6vw, 5rem); }
 body:has(.p-next) .site-footer { margin-top: 0; border-top: 0; }
+
+/* ── About ───────────────────────────────────────── */
+.about { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 40px clamp(32px, 6vw, 96px); align-items: start; padding-top: 24px; }
+.about-photo { margin: 0; position: sticky; top: 96px; }
+.about-photo img { width: 100%; max-width: 420px; aspect-ratio: 1; object-fit: cover; border-radius: 4px; background: var(--surface); }
+.about-main { display: flex; flex-direction: column; gap: 40px; min-width: 0; }
+.about-bio { display: flex; flex-direction: column; gap: 1em; max-width: 62ch; }
+.about-bio p { font-size: clamp(1.1rem, 1.7vw, 1.35rem); line-height: 1.5; }
+.about-bio p + p { color: #c9d0d5; }
+.about-outside p { color: #c9d0d5; max-width: 62ch; }
+.about .spec-grid div { grid-template-columns: 8rem minmax(0, 1fr); }
+@media (max-width: 860px) {
+  .about { grid-template-columns: 1fr; }
+  .about-photo { position: static; }
+  .about-photo img { max-width: 240px; }
+}
+.contact { padding-top: clamp(80px, 10vw, 140px); display: flex; flex-direction: column; gap: 18px; }
+.contact-email { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-block: 8px 6px; }
+.contact-address { font: 700 clamp(0.95rem, 3.6vw, 2.4rem)/1.1 var(--f-display); font-stretch: 105%; text-decoration: none; overflow-wrap: anywhere; border-bottom: 2px solid var(--accent); padding-bottom: 4px; }
+.contact-address:hover { color: var(--accent); }
 
 /* ── Lightbox ────────────────────────────────────── */
 .lightbox { width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: rgba(4,5,6,.96); color: var(--ink); }

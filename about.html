@@ -1,0 +1,52 @@
+---
+title: About
+permalink: /about/
+summary: About Jose Michel-Cano, an aerospace engineering student at Wichita State University, and how to get in touch.
+---
+<section class="wrap page-head">
+  <p class="kicker">About</p>
+  <h1 class="display page-title">About me</h1>
+</section>
+
+<section class="wrap about">
+  <figure class="about-photo">
+    <img src="{{ '/assets/about/jose.jpg' | relative_url }}" alt="Portrait of Jose Michel-Cano">
+  </figure>
+
+  <div class="about-main">
+    <!-- BIO: replace these paragraphs with your own whenever you're ready. -->
+    <div class="about-bio">
+      <p>I'm an aerospace engineering student at Wichita State University and the first in my family to go to college. I've spent four summers on Northrop Grumman's manufacturing process engineering team, and I now write structural substantiation for FAA certification at J.B. Dwerlkotte Associates.</p>
+      <p>My experience is in manufacturing, hands-on builds, structural analysis, and continuous improvement. Next, I want to work closer to the finished aircraft: flight test, survivability, and RCS analysis.</p>
+    </div>
+
+    <dl class="spec-grid">
+      <div><dt>Based in</dt><dd>Wichita, KS · open to relocating</dd></div>
+      <div><dt>Graduating</dt><dd>May 2028 · B.S. Aerospace Engineering, minors in Mathematics and Computer Science</dd></div>
+      <div><dt>Looking for</dt><dd>Internships now, full-time roles soon</dd></div>
+      <div><dt>Experience</dt><dd>Manufacturing · Hands-on builds · Structural analysis · Continuous improvement</dd></div>
+      <div><dt>Interests</dt><dd>Flight test · Survivability · RCS analysis · Hands-on work with finished aircraft</dd></div>
+    </dl>
+
+    <div class="about-outside">
+      <h2 class="section-label mono">Outside of work</h2>
+      <p>I'm usually tinkering and learning something new, whether that's on a flight simulator, a car, or a smaller project on the bench.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap contact" id="contact-me" aria-labelledby="contact-h">
+  <p class="kicker">Contact</p>
+  <h2 id="contact-h" class="display section-title">Get in touch</h2>
+  {% if site.author.email != "" %}
+  <div class="contact-email">
+    <a class="contact-address" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+    <button type="button" class="btn" data-copy="{{ site.author.email }}">Copy email</button>
+  </div>
+  {% endif %}
+  <div class="actions">
+    {% if site.author.linkedin %}<a class="btn" href="{{ site.author.linkedin }}" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>{% endif %}
+    {% if site.author.github %}<a class="btn" href="https://github.com/{{ site.author.github }}" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>{% endif %}
+    {% if site.author.resume %}<a class="btn btn-primary" href="{{ site.author.resume | relative_url }}">Resume (PDF)</a>{% endif %}
+  </div>
+</section>

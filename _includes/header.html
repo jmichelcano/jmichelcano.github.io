@@ -6,6 +6,7 @@
     <nav class="nav" aria-label="Main">
       <a href="{{ '/projects/' | relative_url }}"{% if page.url contains '/projects' %} aria-current="page"{% endif %}>Projects</a>
       <a href="{{ '/#experience' | relative_url }}">Experience</a>
+      <a href="{{ '/about/' | relative_url }}"{% if page.url contains '/about' %} aria-current="page"{% endif %}>About</a>
       {% if site.author.resume %}<a class="nav-cta" href="{{ site.author.resume | relative_url }}">Resume</a>{% endif %}
     </nav>
   </div>

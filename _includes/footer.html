@@ -3,6 +3,7 @@
     <p class="footer-big display" aria-hidden="true">{{ site.title }}</p>
     <div class="footer-row">
       <ul class="footer-links">
+        <li><a href="{{ '/about/#contact-me' | relative_url }}">Contact</a></li>
         {% if site.author.linkedin %}<li><a href="{{ site.author.linkedin }}" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a></li>{% endif %}
         {% if site.author.github %}<li><a href="https://github.com/{{ site.author.github }}" rel="noopener">GitHub <span aria-hidden="true">↗</span></a></li>{% endif %}
         {% if site.author.resume %}<li><a href="{{ site.author.resume | relative_url }}">Resume (PDF) <span aria-hidden="true">↗</span></a></li>{% endif %}
