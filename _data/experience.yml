@@ -15,9 +15,9 @@
   org: Northrop Grumman
   when: Summer 2026          # CONFIRM dates
   where: Palmdale, CA
-  # TODO: replace with one high-level line on what you worked on
   summary: >-
-    Manufacturing Process Engineering team.
+    Manufacturing Process Engineering team, supporting production on the
+    F-35 program and other programs.
 
 - role: Subsystems Lead, Design/Build/Fly
   org: WSU AIAA

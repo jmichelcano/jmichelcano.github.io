@@ -2,10 +2,10 @@
 #  SITE SETTINGS — the only file you need for name, links, etc.
 #  After editing this file, GitHub rebuilds the site in ~1 minute.
 # ─────────────────────────────────────────────────────────────
-title: Jose Michel
+title: Jose Michel-Cano
 tagline: Aerospace Engineering · Wichita State University
 description: >-
-  Projects by Jose Michel, an aerospace engineering student at Wichita State
+  Projects by Jose Michel-Cano, an aerospace engineering student at Wichita State
   University: competition builds, structures work, fabrication, and repairs.
 
 # Change to your custom domain once it is live, e.g. "https://josemichel.com"
@@ -13,9 +13,9 @@ url: "https://jmichelcano.github.io"
 baseurl: ""
 
 author:
-  name: Jose Michel
+  name: Jose Michel-Cano
   email: ""          # optional; leave "" to hide it on the site
-  linkedin: "https://www.linkedin.com/in/josemichelcano"   # CONFIRM this is yours
+  linkedin: "https://www.linkedin.com/in/josemichelcano"
   github: "jmichelcano"
   resume: "/assets/resume.pdf"   # put your resume PDF at assets/resume.pdf
 
