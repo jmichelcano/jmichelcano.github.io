@@ -36,6 +36,8 @@ gallery:
     caption: Panels clamped in the fixture rack while the sealant cures.
   - file: 00-jose-presenting.jpg
     caption: My part of our team's presentation of the program and its results to leadership.
+  - file: 08-presenters-and-vps.jpg
+    caption: Everyone who presented, with the VPs we presented to.
 ---
 
 ## The program
