@@ -2,7 +2,7 @@
 #  SITE SETTINGS — the only file you need for name, links, etc.
 #  After editing this file, GitHub rebuilds the site in ~1 minute.
 # ─────────────────────────────────────────────────────────────
-title: Jose Michel
+title: Jose Michel-Cano
 tagline: Aerospace Engineering · Wichita State University
 description: >-
   Projects by Jose Michel-Cano, an aerospace engineering student at Wichita State
@@ -13,8 +13,8 @@ url: "https://jmichelcano.github.io"
 baseurl: ""
 
 author:
-  name: Jose Michel-Cano
-  email: ""          # optional; leave "" to hide it on the site
+  name: Jose Michel
+  email: "jrmichel-cano@shockers.wichita.edu"          # optional; leave "" to hide it on the site
   linkedin: "https://www.linkedin.com/in/josemichelcano"
   github: "jmichelcano"
   resume: "/assets/resume.pdf"   # put your resume PDF at assets/resume.pdf
