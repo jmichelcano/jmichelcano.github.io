@@ -15,10 +15,10 @@ hero_alt: X-Plane 12 cockpit view on the simulator's main display, lined up on a
 highlights:
   - value: "55 in"
     label: Main display in front of the cockpit
-  - value: "2 screens"
-    label: Out-the-window view plus an instructor station
-  - value: "X-Plane 12"
-    label: Running on a new PC built into the cockpit
+  - value: "3 flights"
+    label: Preset scenarios, from a small plane to a fighter jet
+  - value: "9 pages"
+    label: Operating manual I wrote for the teachers
 
 gallery:
   - file: 01-cockpit-museum-sticker.jpg
@@ -47,6 +47,12 @@ gallery:
     caption: Cessna 172 panel during setup, for students starting with a simpler aircraft.
   - file: 13-cessna-on-runway.jpg
     caption: Cessna 172 holding short at dusk.
+  - file: manual-scenarios.jpg
+    caption: "From the operating manual: loading one of the three preset flights from the instructor station."
+  - file: manual-view-controls.jpg
+    caption: "From the operating manual: camera and view controls on the throttle."
+  - file: manual-flight-controls.jpg
+    caption: "From the operating manual: parking brake, flaps, landing gear, and speed brake on the stick."
 ---
 
 ## The problem
@@ -62,6 +68,12 @@ I worked with a small volunteer team to rebuild it into a working simulator:
 - Mounted a 55-inch main display in front of the cockpit and a second screen as an instructor station.
 - Set up a HOTAS throttle and sidestick plus rudder pedals.
 - Added console panels, guarded switches, interior LED lighting, and surround-sound speakers so the cockpit looks and sounds closer to the real thing.
+
+## Making it usable without me
+
+A simulator is only useful if the teachers can run it on their own. I set it up to boot straight into a flight a few minutes after the PC turns on, with a fighter jet as the default and two other presets: a passenger jet and a small plane.
+
+I also wrote a [9-page operating manual](/assets/projects/flight-sim-cockpit/flight-sim-manual.pdf) with annotated photos. It covers startup, recovering from a crash, switching scenarios, the flight and view controls, lighting and sound, and shutdown.
 
 ## Result
 
