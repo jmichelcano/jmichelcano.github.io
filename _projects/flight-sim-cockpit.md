@@ -1,6 +1,6 @@
 ---
 title: F-35 Flight Sim Cockpit
-summary: With a small volunteer team, I turned a non-working simulator in a mock F-35 cockpit, donated by the Kansas Aviation Museum, into a working X-Plane 12 simulator for a local elementary school.
+summary: With a small volunteer team, we turned a non-working simulator in a mock F-35 cockpit, donated by the Kansas Aviation Museum, into a working X-Plane 12 simulator for a local elementary school.
 category: volunteering
 status: complete
 featured: 3
@@ -73,7 +73,7 @@ I worked with a small volunteer team to rebuild it into a working simulator:
 - Modeled a custom fuel panel in CAD and 3D printed it for the center pedestal. You can rotate the model above.
 - Added console panels, guarded switches, interior LED lighting, and surround-sound speakers so the cockpit looks and sounds closer to the real thing.
 
-## Making it usable without me
+## Making it usable without us
 
 A simulator is only useful if the teachers can run it on their own. I set it up to boot straight into a flight a few minutes after the PC turns on, with a fighter jet as the default and two other presets: a passenger jet and a small plane.
 
@@ -81,4 +81,4 @@ I also wrote a [9-page operating manual](/assets/projects/flight-sim-cockpit/fli
 
 ## Result
 
-Students can now fly everything from a Cessna 172 to a fighter jet. From the instructor station, a teacher picks the aircraft and airport and changes the weather, time of day, and system failures without stopping the simulator.
+Students can now fly everything from a Cessna 172 to an F-14 fighter jet. From the instructor station, a teacher picks the aircraft and airport and changes the weather, time of day, and system failures without stopping the simulator.
