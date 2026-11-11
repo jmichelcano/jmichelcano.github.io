@@ -8,7 +8,7 @@ date: 2026-06-01
 role: Builder (volunteer)
 team: Small volunteer team
 timeframe: "2026"
-tools: [X-Plane 12, Custom PC, HOTAS throttle & sidestick, Rudder pedals, LED lighting, Surround sound]
+tools: [X-Plane 12, Custom PC, CAD, 3D printing, HOTAS throttle & sidestick, Rudder pedals, LED lighting, Surround sound]
 cover: 10-fighter-cockpit-view.jpg
 hero_alt: X-Plane 12 cockpit view on the simulator's main display, lined up on a runway at dusk.
 
@@ -32,7 +32,7 @@ gallery:
   - file: 05-throttle.jpg
     caption: HOTAS throttle mounted on the left console.
   - file: 06-fuel-panel.jpg
-    caption: Fuel panel between the rudder pedals.
+    caption: Fuel panel I modeled in CAD and 3D printed, mounted between the rudder pedals.
   - file: 07-guarded-switches.jpg
     caption: Guarded toggle switches on the side panel.
   - file: 08-console-panels.jpg
@@ -67,6 +67,7 @@ I worked with a small volunteer team to rebuild it into a working simulator:
 - Installed a new PC that runs X-Plane 12.
 - Mounted a 55-inch main display in front of the cockpit and a second screen as an instructor station.
 - Set up a HOTAS throttle and sidestick plus rudder pedals.
+- Modeled a custom fuel panel in CAD and 3D printed it for the center pedestal.
 - Added console panels, guarded switches, interior LED lighting, and surround-sound speakers so the cockpit looks and sounds closer to the real thing.
 
 ## Making it usable without me
