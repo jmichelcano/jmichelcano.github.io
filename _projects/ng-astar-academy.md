@@ -35,7 +35,7 @@ gallery:
   - file: 07-panels-in-fixture.jpg
     caption: Panels clamped in the fixture rack while the sealant cures.
   - file: 00-jose-presenting.jpg
-    caption: Presenting the program and its results to leadership.
+    caption: My part of our team's presentation of the program and its results to leadership.
 ---
 
 ## The program
@@ -53,6 +53,6 @@ I joined as a trainee and built my own panel. The program had a photographer ass
 
 ## Result
 
-A few weeks later, a company VP heard about the program and asked us to present it and its results. Since then, the program has expanded from mechanics to almost all new employees, including engineers, managers, and VPs, so they understand what a mechanic goes through to build the product.
+A few weeks later, a company VP heard about the program and asked our team to present it and its results. The presentation was a team effort, and I presented my part of it. Since then, the program has expanded from mechanics to almost all new employees, including engineers, managers, and VPs, so they understand what a mechanic goes through to build the product.
 
 *All photos on this page were approved for public release by Northrop Grumman's media team.*
