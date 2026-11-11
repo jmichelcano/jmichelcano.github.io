@@ -1,20 +1,22 @@
 ---
 title: Wingbox Stringer Optimizer
-summary: For the WSU x Airbus AE 525 Wingbox Challenge, I wrote a MATLAB program that tested more than 30 million random stringer layouts to find the stiffest one. Our 0.46 lb wingbox predicted a 26.08 lbf failure load against a 20 lbf requirement.
+summary: For the WSU x Airbus AE 525 Wingbox Challenge, I wrote a MATLAB program that tested more than 30 million random stringer layouts to find the stiffest one. Our 0.46 lb balsa and basswood wingbox placed 4th of 18 teams.
 category: school
 status: complete
 featured: 4
 date: 2025-12-07
 role: Wrote the stringer-placement program; drafted the cross-section drawing   # CONFIRM
-team: 3-person team (Group 9)
+team: 4-person team (Group 9)
 timeframe: Fall 2025 · AE 525
 tools: [MATLAB, Fusion 360, SkyCiv]
-cover: rib-layout.jpg
+cover: team-wingbox.jpg
 hero: cross-section-drawing.jpg
 hero_style: drawing        # shows a white-background drawing as light lines on dark
 hero_alt: Engineering drawing of the wingbox cross-section showing the front and rear spars, curved top skin, bottom skin, and four stringers on each skin.
 
 highlights:
+  - value: "4th"
+    label: Of 18 teams, with the second-highest design score
   - value: "0.46 lb"
     label: Final weight, against a 1.00 lb limit
   - value: "26.08 lbf"
@@ -23,6 +25,8 @@ highlights:
     label: Random stringer layouts evaluated
 
 gallery:
+  - file: team-wingbox.jpg
+    caption: Group 9 with the finished wingbox before testing.
   - file: cross-section-drawing.jpg
     caption: Final cross-section. Four stringers on each skin, placed by the optimizer.
   - file: rib-layout.jpg
@@ -31,11 +35,13 @@ gallery:
     caption: The three required load cases. A 2 lb dead load Q at the trailing edge, plus a tip load P of 0 lbf, 20 lbf, and the maximum the box can carry.
   - file: skyciv-check.jpg
     caption: Moments of inertia checked independently in SkyCiv, for the curved top-skin arc and the full section.
+  - file: results-chart.jpg
+    caption: Final total scores for all 18 groups. Group 9 scored 223.32, fourth overall.
 ---
 
 ## The challenge
 
-AE 525's wingbox challenge, run with Airbus: design and build the lightest semi-monocoque cantilevered wingbox that can handle bending and torsion. The box had to weigh under 1.00 lb, carry a 2 lb dead load plus at least 20 lbf at the tip, and then be loaded to failure. The materials were balsa and basswood.
+AE 525's wingbox contest, sponsored by Airbus: design and build the lightest semi-monocoque cantilevered wingbox that can handle bending and torsion. The box had a 47 in active length, had to weigh under 1.00 lb, and had to carry a 2 lb dead load plus at least 20 lbf at the tip before being loaded to failure. The materials were balsa and basswood. Eighteen teams were scored on design, measured performance, how well their predictions matched the test, and the written report.
 
 ## Finding the stringer layout
 
@@ -52,6 +58,10 @@ The team then built three more programs on that layout:
 We modeled the section in Fusion 360 and checked the moments of inertia in SkyCiv.
 
 ## Result
+
+We placed **4th of 18 teams** with a total score of 223.32, and earned the **second-highest design score** in the class (136.11).
+
+Our predictions:
 
 | Load case (Q = 2 lb) | Tip deflection *w* | Twist *θ* |
 |---|---|---|

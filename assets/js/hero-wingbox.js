@@ -41,7 +41,7 @@
     var spacing = [1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 2, 2, 2, 2, 2.5, 3.5, 4, 4, 4, 4, 4];
     var ribs = [], s = 0;
     spacing.forEach(function (d) { s += d; ribs.push(s); });
-    var SPAN = s; // 43 in
+    var SPAN = 47; // active length; rib 17 sits at 43 in, free-end rib at 47 in
 
     var group = new THREE.Group();
     scene.add(group);
@@ -64,7 +64,7 @@
 
     // Ribs, drawn in from root to tip on load
     var ribMats = [];
-    ribs.slice(0, -1).forEach(function (x) {
+    ribs.forEach(function (x) {
       var m = mat(orange, reduce ? 0.85 : 0);
       ribMats.push(m);
       group.add(loop(x, m));
@@ -89,11 +89,11 @@
     group.add(mount);
 
     // Centre the beam
-    group.position.set(-SPAN * 0.42, -0.5, -CHORD / 2);
+    group.position.set(-SPAN * 0.56, -0.5, -CHORD / 2);
 
     /* Camera framing */
     var target = new THREE.Vector3(0, 0, 0);
-    var base = { r: 34, theta: -0.72, phi: 1.12 };
+    var base = { r: 40, theta: -0.72, phi: 1.12 };
     var pointer = { x: 0, y: 0 }, eased = { x: 0, y: 0 };
     function resize() {
       var w = canvas.clientWidth, hgt = canvas.clientHeight;
@@ -101,7 +101,7 @@
       renderer.setSize(w, hgt, false);
       camera.aspect = w / hgt;
       // Narrow screens: pull back so the full span stays in view
-      base.r = w < 720 ? 52 : 34;
+      base.r = w < 720 ? 58 : 40;
       // Wide screens: slide the model right so it sits beside the headline, not behind the paragraph
       if (w >= 900) camera.setViewOffset(w, hgt, -w * 0.2, -hgt * 0.04, w, hgt);
       else camera.clearViewOffset();
