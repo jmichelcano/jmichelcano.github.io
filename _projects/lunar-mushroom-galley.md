@@ -4,10 +4,10 @@ summary: First place at the 2025 Innovation Works Challenge, sponsored by Lockhe
 category: competition
 status: complete
 featured: 1
-date: 2025-10-15            # CONFIRM: competition date (used for sorting)
+date: 2025-11-15
 role: CAD lead and prototype builder
 team: Team of 5
-timeframe: Fall 2025         # CONFIRM
+timeframe: Fall 2025 · competed November 2025
 tools: [Fusion 360, 3D printing, Arduino, LCD & keypad, Temperature & humidity sensor, LED grow lighting]
 cover: cad-render.jpg
 hero: first-place.jpg
@@ -50,7 +50,7 @@ The concept was a team effort. The design work covered:
 
 ## My part
 
-On a team of five, I built the CAD model of the full system and then built the working prototype. It runs on an Arduino that reads a temperature and humidity sensor, controls the LED grow lights, and drives an LCD and keypad for setting it up.
+On a team of five, I built the CAD model of the full system and then built the working prototype. I also supplied the Arduino and electronics that bring it to life: a temperature and humidity sensor, LED grow lights, and an LCD and keypad.
 
 ## Result
 

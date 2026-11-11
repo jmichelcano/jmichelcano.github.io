@@ -4,10 +4,10 @@ summary: I bought a salvage 2020 Infiniti Q50 whose engine seized about a mile a
 category: personal
 status: complete
 featured: 2                 # position on the home page; delete this line to un-feature
-date: 2023-08-01            # CONFIRM: roughly when it was running again (used for sorting)
+date: 2023-09-01
 role: Sole mechanic, from sourcing to first start
 team: Solo
-timeframe: Dec 2022 – mid 2023 (8 months)   # CONFIRM end month
+timeframe: Dec 2022 – mid/late 2023
 tools: [Factory service manual, Engine crane, Floor jack & stands, Hand tools]
 cover: 05-engine-out.jpg
 hero_alt: The original engine and transmission out of the car on the garage floor, next to the stripped front end.
