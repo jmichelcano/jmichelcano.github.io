@@ -76,6 +76,7 @@ body_class: is-home
         <h3>{{ e.role }}</h3>
         <p class="tl-org">{{ e.org }}{% if e.where %} · {{ e.where }}{% endif %}</p>
         {% if e.summary %}<p class="tl-summary">{{ e.summary }}</p>{% endif %}
+        {% if e.link %}<a class="tl-link" href="{{ e.link | relative_url }}">{{ e.link_text | default: "See the project" }} <span aria-hidden="true">→</span></a>{% endif %}
         {% if e.highlights %}<ul class="tl-highlights">{% for h in e.highlights %}<li>{{ h }}</li>{% endfor %}</ul>{% endif %}
       </div>
     </li>

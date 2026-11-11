@@ -211,6 +211,8 @@ h1, h2, h3 { text-wrap: balance; font-weight: 700; }
 .tl-body h3 { font-size: 1.35rem; font-stretch: 110%; letter-spacing: -0.005em; }
 .tl-org { color: var(--ink); font-weight: 500; }
 .tl-summary { color: var(--muted); }
+.tl-link { align-self: flex-start; margin-top: 4px; font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
+.tl-link:hover { color: var(--accent); }
 .tl-highlights { margin: 6px 0 0; padding-left: 1.1em; color: var(--muted); font-size: 0.95rem; display: flex; flex-direction: column; gap: 6px; }
 .tl-highlights li::marker { color: var(--accent); }
 @media (max-width: 900px) {
