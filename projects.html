@@ -25,7 +25,7 @@ permalink: /projects/
         {% if p.cover %}<img class="ix-thumb" src="{{ '/assets/projects/' | append: p.slug | append: '/' | append: p.cover | relative_url }}" alt="" loading="lazy">{% endif %}
         <span class="ix-main">
           <span class="ix-title">{{ p.title }}</span>
-          <span class="ix-meta mono">{{ cat.label | default: p.category }} · {{ p.date | date: "%Y" }}{% if p.status == "in-progress" %} · <span class="accent">In progress</span>{% endif %}</span>
+          <span class="ix-meta mono">{% include status.html s=p.status %} {{ cat.label | default: p.category }} · {{ p.date | date: "%Y" }}</span>
         </span>
         <span class="ix-arrow" aria-hidden="true">→</span>
       </a>

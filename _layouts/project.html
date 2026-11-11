@@ -13,7 +13,7 @@ layout: default
     {% endif %}
     <div class="wrap p-hero-inner">
       <a class="back mono" href="{{ '/projects/' | relative_url }}"><span aria-hidden="true">←</span> Project index</a>
-      <p class="kicker">{{ cat.label | default: page.category }} · {{ page.date | date: "%Y" }} · {% if page.status == "in-progress" %}<span class="accent">In progress</span>{% else %}Complete{% endif %}</p>
+      <p class="kicker">{% include status.html s=page.status %} {{ cat.label | default: page.category }} · {{ page.date | date: "%Y" }}</p>
       <h1 class="display p-title">{{ page.title }}</h1>
     </div>
   </header>

@@ -10,7 +10,7 @@ title: Steel Gate Door
 summary: One or two sentences a recruiter reads on the card. Say what you did and the result.
 
 category: personal         # competition | work | school | personal | volunteering
-status: complete           # complete | in-progress
+status: complete           # complete | in-progress | paused
 # featured: 3              # remove the # to show it on the home page (number = position)
 date: 2026-01-01           # when it finished (or started, if in progress). Newest shows first.
 

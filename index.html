@@ -43,7 +43,7 @@ body_class: is-home
         <img src="{{ '/assets/projects/' | append: p.slug | append: '/' | append: img | relative_url }}" alt="" loading="lazy" data-parallax>
       </div>
       <div class="wrap chapter-body">
-        <p class="kicker">{{ cat.label | default: p.category }} · {{ p.date | date: "%Y" }}{% if p.status == "in-progress" %} · <span class="accent">In progress</span>{% endif %}</p>
+        <p class="kicker">{% include status.html s=p.status %} {{ cat.label | default: p.category }} · {{ p.date | date: "%Y" }}</p>
         <h3 class="display chapter-title">{{ p.title }}</h3>
         <p class="chapter-summary">{{ p.summary }}</p>
         {% if p.highlights %}

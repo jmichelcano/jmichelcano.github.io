@@ -56,7 +56,7 @@ The part between the two `---` lines is settings. Watch these:
 - Keep the two-space indents under `gallery:` and `highlights:` exactly as in the template.
 - If a value contains a colon `:`, wrap it in quotes: `summary: "Result: it works"`.
 - `featured: 1` puts a project first on the home page. Delete the line to un-feature it.
-- `status: in-progress` shows the orange *In progress* badge.
+- `status:` sets the label on every card and page: `complete` (green), `in-progress` (orange), or `paused` (amber).
 - `published: false` hides a project completely. Four drafts are waiting for photos:
   flight sim cockpit, wingbox optimizer, DBF payload, camera battery door.
 

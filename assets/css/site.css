@@ -12,6 +12,8 @@
   --line-strong: rgba(238, 241, 243, 0.28);
   --accent: #ff4f00;      /* International Orange */
   --on-accent: #0a0a0a;
+  --ok: #6fc49a;          /* status: complete */
+  --paused: #e3b341;      /* status: paused */
 
   --f-display: "Archivo", "Arial Black", "Helvetica Neue", Arial, sans-serif;
   --f-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
@@ -74,6 +76,20 @@ h1, h2, h3 { text-wrap: balance; font-weight: 700; }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
 .link-arrow { display: inline-flex; gap: 8px; font-weight: 500; border-bottom: 1px solid var(--line-strong); padding-bottom: 4px; transition: gap .3s var(--ease), border-color .3s; }
+
+/* ── Status label ─────────────────────────────── */
+.status {
+  display: inline-flex; align-items: center; gap: 7px; padding: 3px 10px 3px 8px;
+  border: 1px solid currentColor; border-radius: 999px;
+  font: 500 0.68rem/1.3 var(--f-mono); letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap;
+}
+.status-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.status-complete { color: var(--ok); }
+.status-progress { color: var(--accent); }
+.status-progress .status-dot { animation: pulse 2s ease-in-out infinite; }
+.status-paused { color: var(--paused); }
+@keyframes pulse { 50% { opacity: .35; } }
+.ix-meta .status { padding: 1px 8px 1px 6px; font-size: 0.62rem; }
 
 /* ── Header ───────────────────────────────────────── */
 .site-header {
@@ -214,7 +230,7 @@ h1, h2, h3 { text-wrap: balance; font-weight: 700; }
 
 /* ── Projects index (viewer) ─────────────────────── */
 .page-head { display: flex; flex-direction: column; gap: 18px; padding-top: clamp(120px, 16vw, 180px); padding-bottom: 36px; }
-.page-title { font-size: clamp(3.4rem, 12vw, 10rem); }
+.page-title { font-size: clamp(2.6rem, 10.5vw, 10rem); }
 .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
 .filters button {
   font: 500 0.9rem/1 var(--f-body); color: var(--muted); background: transparent;
@@ -234,7 +250,7 @@ h1, h2, h3 { text-wrap: balance; font-weight: 700; }
 .ix-thumb { display: none; }
 .ix-main { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .ix-title { font: 800 clamp(1.3rem, 2.4vw, 2rem)/1 var(--f-display); font-stretch: 115%; text-transform: uppercase; color: var(--muted); transition: color .25s, transform .4s var(--ease); }
-.ix-meta { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); }
+.ix-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); }
 .ix-arrow { font-size: 1.2rem; color: var(--faint); transform: translateX(-8px); opacity: 0; transition: all .35s var(--ease); }
 .index-row.is-active .ix-title, .index-row a:hover .ix-title, .index-row a:focus-visible .ix-title { color: var(--ink); transform: translateX(6px); }
 .index-row.is-active a::before { width: 100%; }
@@ -261,6 +277,8 @@ h1, h2, h3 { text-wrap: balance; font-weight: 700; }
   .ix-num, .ix-arrow { display: none; }
   .ix-thumb { display: block; width: 88px; aspect-ratio: 1; object-fit: cover; border-radius: 3px; }
   .ix-title { color: var(--ink); }
+  .index-row.is-active .ix-title, .index-row a:hover .ix-title { transform: none; }
+  .index-row.is-active a::before { width: 0; }
 }
 
 /* ── Project page ────────────────────────────────── */

@@ -1,0 +1,2 @@
+{% comment %} Status label. Pass s = the project's status: complete | in-progress | paused {% endcomment %}
+{% if include.s == "in-progress" %}<span class="status status-progress"><span class="status-dot" aria-hidden="true"></span>In progress</span>{% elsif include.s == "paused" %}<span class="status status-paused"><span class="status-dot" aria-hidden="true"></span>Paused</span>{% else %}<span class="status status-complete"><span class="status-dot" aria-hidden="true"></span>Complete</span>{% endif %}
