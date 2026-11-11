@@ -96,7 +96,7 @@ Always use it. Phone photos straight off the camera are 3–8 MB and carry your 
 - `loop: true` on a video — plays silently on repeat like a GIF. Good for short CAD animations.
 - `featured: 1` — shows the project as a full-screen panel on the home page, in that order.
 
-## 7. Interactive 3D models (like Alejandro's site)
+## 7. Interactive 3D models
 
 Any project can have a rotatable 3D model. Visitors click **Load interactive 3D**, so it never slows the page down.
 
