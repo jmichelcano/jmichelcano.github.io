@@ -1,41 +1,24 @@
 ---
 title: Certification Structures Example
-summary: An interactive Part 25 emergency-landing check for an invented cabin installation, built the same way I write structural substantiation at JBDA. Change the inputs and the margins of safety update live.
+summary: Size the fasteners for a cabin equipment unit under the Part 25 emergency-landing loads. Change the inputs and the margins of safety and load-path narrative update live, the way I write substantiation at JBDA.
 category: work
 status: complete
-featured: 4
 date: 2026-11-12
 role: Author. Illustrative example, not client work
 team: Solo
 timeframe: "2026"
 tools: [14 CFR 25.561, 14 CFR 25.625, Hand calculations, JavaScript]
 cover: cover.jpg
-hero_alt: Side-view diagram of an equipment unit on a bracket, with the forward 9g load arrow and the fasteners in tension highlighted.
+hero: none
 scripts: [/assets/js/ms-calc.js]
-
-highlights:
-  - value: "5"
-    label: Emergency-landing load cases from §25.561
-  - value: "1.15"
-    label: Fitting factor from §25.625
-  - value: "MS ≥ 0"
-    label: Every fastener, every load case
 ---
-
-## Why this page exists
-
-At J.B. Dwerlkotte Associates I write structural substantiation for FAA certification of business jet and turboprop modifications. That work belongs to the firm and its customers, so none of it appears here.
-
-This page shows the same kind of analysis on an **invented installation**: a cabin equipment unit on a bracket, fastened to the floor structure. Every number is either made up or comes from public sources. It is **not client work** and not a certified design.
-
-## Try it
 
 <div class="calc" data-calc markdown="0">
   <div class="calc-inputs" role="group" aria-label="Installation inputs">
     <label class="calc-field"><span>Item weight, W</span><span class="calc-row"><input type="range" id="c-w" min="2" max="120" step="1" value="60"><output for="c-w" id="o-w">60 lb</output></span></label>
-    <label class="calc-field"><span>CG height above the mounting surface, h</span><span class="calc-row"><input type="range" id="c-h" min="1" max="18" step="0.5" value="10"><output for="c-h" id="o-h">10 in</output></span></label>
-    <label class="calc-field"><span>Fore–aft spacing between fastener rows, L<sub>x</sub></span><span class="calc-row"><input type="range" id="c-lx" min="2" max="14" step="0.5" value="3"><output for="c-lx" id="o-lx">3 in</output></span></label>
-    <label class="calc-field"><span>Side-to-side spread of each row, L<sub>y</sub></span><span class="calc-row"><input type="range" id="c-ly" min="2" max="14" step="0.5" value="6"><output for="c-ly" id="o-ly">6 in</output></span></label>
+    <label class="calc-field"><span>CG height above the mounting surface, h</span><span class="calc-row"><input type="range" id="c-h" min="1" max="18" step="0.5" value="8"><output for="c-h" id="o-h">8 in</output></span></label>
+    <label class="calc-field"><span>Fore–aft spacing between fastener rows, L<sub>x</sub></span><span class="calc-row"><input type="range" id="c-lx" min="2" max="14" step="0.5" value="5"><output for="c-lx" id="o-lx">5 in</output></span></label>
+    <label class="calc-field"><span>Side-to-side spread of each row, L<sub>y</sub></span><span class="calc-row"><input type="range" id="c-ly" min="2" max="14" step="0.5" value="8"><output for="c-ly" id="o-ly">8 in</output></span></label>
     <div class="calc-selects">
       <label class="calc-field"><span>Fasteners per row</span><select id="c-k"><option value="2" selected>2 (4 total)</option><option value="3">3 (6 total)</option><option value="4">4 (8 total)</option></select></label>
       <label class="calc-field"><span>Fastener</span><select id="c-d"><option value="AN3" selected>AN3 (3/16 in)</option><option value="AN4">AN4 (1/4 in)</option></select></label>
@@ -68,11 +51,23 @@ This page shows the same kind of analysis on an **invented installation**: a cab
     </div>
   </div>
 
-  <details class="calc-work" open>
+  <div class="calc-narrative">
+    <p class="calc-narrative-label mono">Load-path narrative</p>
+    <p data-narrative></p>
+  </div>
+
+  <details class="calc-work">
     <summary>Show the work for the selected case</summary>
     <div data-work></div>
   </details>
 </div>
+
+<p class="calc-note">Invented installation, not client work. Every number is made up or from public sources, and this is not a certified design.</p>
+
+## What I do at JBDA
+
+<!-- DRAFT from LinkedIn: rewrite in your own words -->
+At J.B. Dwerlkotte Associates I write the structural substantiation that shows a modification is safe to fly. A typical job is a change to a business jet or turboprop: a galley modification, a new flight computer, an ELT, or a doubler over damaged skin. I trace each load from the installation into the primary structure, size the fasteners, inserts, doublers, and panels, and write it up as a load-path narrative that the DER reviews and approves. That work belongs to the firm and its customers, so this page uses an invented example built the same way.
 
 ## How the numbers work
 

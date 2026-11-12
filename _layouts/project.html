@@ -4,8 +4,9 @@ layout: default
 {% assign media = '/assets/projects/' | append: page.slug | append: '/' %}
 {% assign cat = site.project_categories | where: "key", page.category | first %}
 {% assign hero = page.hero | default: page.cover %}
+{% if page.hero == "none" %}{% assign hero = false %}{% endif %}
 <article class="project">
-  <header class="p-hero{% if page.hero_style == 'drawing' %} is-drawing{% endif %}">
+  <header class="p-hero{% if page.hero_style == 'drawing' %} is-drawing{% endif %}{% unless hero %} no-media{% endunless %}">
     {% if hero %}
     <div class="p-hero-media">
       <img src="{{ media | append: hero | relative_url }}" alt="{{ page.hero_alt | default: page.title | escape }}" data-parallax>

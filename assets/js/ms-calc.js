@@ -151,59 +151,112 @@
     });
     g.appendChild(defs);
 
+    // Geometry (inches): tray flange spans the fastener pattern plus edge margin;
+    // the unit sits between the fastener rows; its CG is at height h.
+    var edge = 0.75;
+    var flangeHalf = span / 2 + edge;
+    var unitHalf = Math.max(span / 2 - 0.55, 0.9);
+    var unitH = Math.max(p.h * 1.6, p.h + 2);
+    var legH = Math.min(1.5, unitH * 0.4);
     var floorY = 218, cx = 270;
-    var boxW = span + 1.5, boxH = Math.max(2 * p.h, 1);
-    var s = Math.min(300 / boxW, 160 / (boxH + 0.4), 40);
-    var halfW = boxW * s / 2, plateT = 6;
-    var boxTop = floorY - plateT - boxH * s;
+    var s = Math.min(330 / (2 * flangeHalf), 158 / (unitH + 0.3), 26);
+    var plateT = 5;
+    var baseY = floorY - plateT;
+    var X = function (u) { return cx + u * s; };
+    var Y = function (z) { return baseY - z * s; };
 
     // floor structure
     g.appendChild(el("rect", { x: 40, y: floorY, width: 440, height: 14, "class": "sv-floor" }));
     for (var hx = 44; hx < 480; hx += 14) g.appendChild(el("line", { x1: hx, y1: floorY + 14, x2: hx - 10, y2: floorY + 26, "class": "sv-hatch" }));
     g.appendChild(el("text", { x: 44, y: floorY + 42, "class": "sv-label" }, "Floor structure"));
-    // bracket base + item
-    g.appendChild(el("rect", { x: cx - halfW - 0.4 * s, y: floorY - plateT, width: 2 * halfW + 0.8 * s, height: plateT, "class": "sv-plate" }));
-    g.appendChild(el("rect", { x: cx - halfW, y: boxTop, width: 2 * halfW, height: boxH * s, "class": "sv-item" }));
+
+    // tray: base flange + upturned angle legs hugging the unit
+    g.appendChild(el("rect", { x: X(-flangeHalf), y: baseY, width: 2 * flangeHalf * s, height: plateT, "class": "sv-plate" }));
+    [-1, 1].forEach(function (sd) {
+      var lx = sd < 0 ? X(-unitHalf) - 4 : X(unitHalf);
+      g.appendChild(el("rect", { x: lx, y: Y(legH), width: 4, height: legH * s, "class": "sv-plate" }));
+    });
+
+    // the unit
+    var ux = X(-unitHalf), uy = Y(unitH), uw = 2 * unitHalf * s, uh = unitH * s;
+    g.appendChild(el("rect", { x: ux, y: uy, width: uw, height: uh, rx: 5, "class": "sv-item" }));
+    var slots = Math.min(5, Math.floor(uh / 14));
+    for (var i = 0; i < slots; i++) {
+      g.appendChild(el("line", { x1: ux + uw * 0.22, y1: uy + 12 + i * 6, x2: ux + uw * 0.78, y2: uy + 12 + i * 6, "class": "sv-detail" }));
+    }
+    if (endView) {
+      g.appendChild(el("rect", { x: ux + uw * 0.18, y: uy + uh * 0.42, width: uw * 0.64, height: uh * 0.2, rx: 2, "class": "sv-screen" }));
+    } else {
+      g.appendChild(el("rect", { x: ux - 6, y: uy + uh * 0.35, width: 6, height: uh * 0.22, rx: 2, "class": "sv-detail-fill" })); // front handle
+      g.appendChild(el("rect", { x: ux + uw, y: uy + uh * 0.55, width: 7, height: 12, "class": "sv-detail-fill" }));          // aft connector
+    }
     g.appendChild(el("text", { x: 40, y: 46, "class": "sv-label" }, endView ? "End view, looking forward" : "Side view, nose left"));
 
-    // fasteners
+    // fasteners through the flange
     var pos = [];
-    if (endView) { for (var i = 0; i < p.k; i++) pos.push(-p.Ly / 2 + i * p.Ly / (p.k - 1)); }
+    if (endView) { for (var k = 0; k < p.k; k++) pos.push(-p.Ly / 2 + k * p.Ly / (p.k - 1)); }
     else pos = [-p.Lx / 2, p.Lx / 2];
     pos.forEach(function (u) {
-      var px = cx + u * s;
-      var tension = false;
-      if (x.c.id === "fwd") tension = u > 0;       // load toward the nose: aft row pulls
+      var px = X(u), tension = false;
+      if (x.c.id === "fwd") tension = u > 0;
       if (x.c.id === "aft") tension = u < 0;
-      if (x.c.id === "side") tension = u < -1e-9;  // load to the right: left side pulls
+      if (x.c.id === "side") tension = u < -1e-9;
       if (x.c.id === "up") tension = true;
-      g.appendChild(el("rect", { x: px - 3, y: floorY - plateT - 6, width: 6, height: plateT + 22, "class": tension ? "sv-bolt sv-bolt-t" : "sv-bolt" }));
+      g.appendChild(el("rect", { x: px - 5, y: baseY - 4, width: 10, height: 4, "class": tension ? "sv-bolt sv-bolt-t" : "sv-bolt" }));
+      g.appendChild(el("rect", { x: px - 2.5, y: baseY, width: 5, height: plateT + 18, "class": tension ? "sv-bolt sv-bolt-t" : "sv-bolt" }));
       if (tension) arrow(g, px, floorY + 34, px, floorY + 58, "react");
     });
 
     // CG + h dimension
-    var cgY = floorY - plateT - p.h * s;
+    var cgY = Y(p.h);
     g.appendChild(el("circle", { cx: cx, cy: cgY, r: 6, "class": "sv-cg" }));
     g.appendChild(el("text", { x: cx - 10, y: cgY + 20, "text-anchor": "end", "class": "sv-label" }, "CG"));
-    var dimX = cx + halfW + 22;
-    g.appendChild(el("line", { x1: dimX, y1: cgY, x2: dimX, y2: floorY - plateT, "class": "sv-dim" }));
+    var dimX = X(flangeHalf) + 18;
+    g.appendChild(el("line", { x1: dimX, y1: cgY, x2: dimX, y2: baseY, "class": "sv-dim" }));
     g.appendChild(el("line", { x1: cx, y1: cgY, x2: dimX + 4, y2: cgY, "class": "sv-ext" }));
-    g.appendChild(el("text", { x: dimX + 6, y: (cgY + floorY) / 2, "class": "sv-label" }, "h = " + fmt(p.h, 1) + " in"));
-    // span dimension
-    var dY = floorY + 84, a = cx + pos[0] * s, b = cx + pos[pos.length - 1] * s;
+    g.appendChild(el("text", { x: dimX + 6, y: (cgY + baseY) / 2 + 4, "class": "sv-label" }, "h = " + fmt(p.h, 1) + " in"));
+    var dY = floorY + 84, a = X(pos[0]), b = X(pos[pos.length - 1]);
     g.appendChild(el("line", { x1: a, y1: dY, x2: b, y2: dY, "class": "sv-dim" }));
-    g.appendChild(el("text", { x: (a + b) / 2, y: dY - 6, "text-anchor": "middle", "class": "sv-label" }, (endView ? "Ly = " : "Lx = ") + fmt(span, 1) + " in"));
+    [a, b].forEach(function (q) { g.appendChild(el("line", { x1: q, y1: dY - 5, x2: q, y2: dY + 5, "class": "sv-dim" })); });
+    g.appendChild(el("text", { x: (a + b) / 2, y: dY - 8, "text-anchor": "middle", "class": "sv-label" }, (endView ? "Ly = " : "Lx = ") + fmt(span, 1) + " in"));
 
     // load arrow
     var L = 80, label = fmt(x.c.g, 1) + "g · W = " + fmt(x.F, 0) + " lb";
     if (x.c.id === "fwd") { arrow(g, cx - 10, cgY, cx - 10 - L, cgY, "load"); g.appendChild(el("text", { x: cx - 14, y: cgY - 12, "text-anchor": "end", "class": "sv-load-t" }, label)); }
     if (x.c.id === "aft" || x.c.id === "side") { arrow(g, cx + 10, cgY, cx + 10 + L, cgY, "load"); g.appendChild(el("text", { x: cx + 14, y: cgY - 12, "class": "sv-load-t" }, label)); }
     if (x.c.id === "up") { arrow(g, cx, cgY - 10, cx, Math.max(cgY - 10 - L, 16), "load"); g.appendChild(el("text", { x: cx + 12, y: Math.max(cgY - 40, 30), "class": "sv-load-t" }, label)); }
-    if (x.c.id === "down") { arrow(g, cx, cgY + 10, cx, Math.min(cgY + 10 + L, floorY - 14), "load"); g.appendChild(el("text", { x: cx - 14, y: cgY + 52, "text-anchor": "end", "class": "sv-load-t" }, label)); }
+    if (x.c.id === "down") { arrow(g, cx, cgY + 10, cx, Math.min(cgY + 10 + L, baseY - 8), "load"); g.appendChild(el("text", { x: cx - 14, y: cgY + 52, "text-anchor": "end", "class": "sv-load-t" }, label)); }
 
-    // legend
     g.appendChild(el("rect", { x: 40, y: 18, width: 10, height: 10, "class": "sv-bolt sv-bolt-t" }));
     g.appendChild(el("text", { x: 56, y: 27, "class": "sv-label" }, "Fasteners in tension"));
+  }
+
+  function renderNarrative(p, r) {
+    var x = r.rows.filter(function (y) { return y.c.id === selected; })[0];
+    var n = r.n, bolt = p.bolt.name, dir = x.c.name.toLowerCase();
+    var out = "Under the " + fmt(x.c.g, 1) + "g " + dir + " emergency-landing condition of 14 CFR 25.561, the " + fmt(p.W, 0) +
+      " lb unit produces a " + fmt(x.F, 0) + " lb inertia load at its CG, " + fmt(p.h, 1) + " in above the floor. ";
+    if (x.c.kind === "down") {
+      out += "The load passes from the unit into the tray and bears directly on the floor structure through the tray base. The " + n + " " + bolt +
+        " fasteners carry no load in this condition. The tray and floor would be checked in bearing separately.";
+    } else if (x.c.kind === "up") {
+      out += "The load passes from the unit into the tray and is reacted as direct tension shared equally by all " + n + " " + bolt +
+        " fasteners, " + fmt(x.T, 1) + " lb each.";
+    } else {
+      var side = x.c.id === "fwd" ? "aft row of fasteners" : x.c.id === "aft" ? "forward row of fasteners" : "fasteners along the left edge";
+      out += "The load passes from the unit into the tray and is reacted in shear by all " + n + " " + bolt + " fasteners, " + fmt(x.V, 1) +
+        " lb each. Because the CG sits above the floor, the load also creates a " + fmt(x.M, 0) +
+        " in·lb overturning moment. The " + side + " reacts it in tension, " + fmt(x.T, 1) +
+        " lb on the most heavily loaded fastener, while the opposite edge of the tray bears on the floor.";
+    }
+    if (x.MS !== null) {
+      var gov = r.bearing < r.boltShear ? " Sheet bearing governs the shear allowable." : "";
+      out += " With the 1.15 fitting factor of 25.625, the critical fastener " + (x.V && x.T ? "sees combined shear and tension and " : "") +
+        "has a margin of safety of <b class=\"" + (x.MS >= 0 ? "ms-ok" : "ms-bad") + "\">" + ms(x.MS) + "</b>." +
+        (x.V ? gov : "") +
+        (x.MS >= 0 ? " The installation is adequate for this condition." : " The installation is not adequate for this condition and needs more fasteners, a wider pattern, or thicker sheet.");
+    }
+    root.querySelector("[data-narrative]").innerHTML = out;
   }
 
   function update() {
@@ -213,7 +266,7 @@
     $("#o-lx").textContent = fmt(p.Lx, 1) + " in";
     $("#o-ly").textContent = fmt(p.Ly, 1) + " in";
     var r = solve(p);
-    renderTable(r); renderWork(p, r); renderSvg(p, r);
+    renderTable(r); renderWork(p, r); renderSvg(p, r); renderNarrative(p, r);
   }
 
   function select(id) {
