@@ -370,6 +370,15 @@ body:has(.p-next) .site-footer { margin-top: 0; border-top: 0; }
   .about-photo { position: static; }
   .about-photo img { max-width: 240px; }
 }
+.workshop-grid { margin: -24px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; }
+.workshop-grid > div { display: flex; flex-direction: column; gap: 6px; padding: 16px 20px 16px 0; border-bottom: 1px solid var(--line); min-width: 0; }
+.workshop-grid > div:nth-child(even) { padding-left: 20px; padding-right: 0; border-left: 1px solid var(--line); }
+.workshop-grid dt { font: 500 0.7rem/1.4 var(--f-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.workshop-grid dd { margin: 0; color: #c9d0d5; font-size: 0.95rem; }
+@media (max-width: 560px) {
+  .workshop-grid { grid-template-columns: 1fr; }
+  .workshop-grid > div:nth-child(even) { padding-left: 0; border-left: 0; }
+}
 .contact { padding-top: clamp(80px, 10vw, 140px); display: flex; flex-direction: column; gap: 18px; }
 .contact-email { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-block: 8px 6px; }
 .contact-address { font: 700 clamp(0.95rem, 3.6vw, 2.4rem)/1.1 var(--f-display); font-stretch: 105%; text-decoration: none; overflow-wrap: anywhere; border-bottom: 2px solid var(--accent); padding-bottom: 4px; }
