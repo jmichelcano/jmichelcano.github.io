@@ -1,20 +1,20 @@
 ---
 title: Project Innovation Hub
-summary: As a lab mentor at Wichita State's Project Innovation Hub, I ran and taught students on the plasma cutter, waterjet, laser cutter, and 3D printers, and helped build and repair projects across the shop.
+summary: As a lab mentor at Wichita State's Project Innovation Hub, I trained students on the shop's machines, from CNC plasma and waterjet to the laser cutter, wood mills, and 3D printers, and helped them take projects from CAD to finished parts.
 category: work
 status: complete
 date: 2026-08-01
 role: Lab Mentor
 team: Hub staff and student makers
 timeframe: Jan 2025 – Aug 2026
-tools: [CNC plasma, Waterjet, Laser cutter, 3D printing, Fusion 360, Slicing, CNC programming]
-cover: 03-printed-hand.jpg
+tools: [CNC plasma, Waterjet, Laser cutter, CNC wood mills, Sandblasting, 3D printing, Fusion 360, Slicing, CNC programming]
+cover: cover-plasma.jpg
 hero: 01-plasma-table-slats.jpg
 hero_alt: Looking down the plasma cutting table at its row of steel support slats, with the torch gantry at the far end.
 
 highlights:
-  - value: "4"
-    label: Cutting and printing processes run and taught
+  - value: "CAD → part"
+    label: Guided students from a Fusion 360 model to a finished part
   - value: "1 yr 8 mo"
     label: Lab mentor at the Hub
 
