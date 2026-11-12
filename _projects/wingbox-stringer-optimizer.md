@@ -3,7 +3,7 @@ title: Wingbox Stringer Optimizer
 summary: For the WSU x Airbus AE 525 Wingbox Challenge, I wrote a MATLAB program that tested more than 30 million random stringer layouts to find the stiffest one. Our 0.46 lb balsa and basswood wingbox placed 4th of 18 teams.
 category: school
 status: complete
-featured: 4
+featured: 3
 date: 2025-12-07
 role: Primary programmer; proposed the MATLAB search approach; drafted the cross-section drawing
 team: 4-person team (Group 9)

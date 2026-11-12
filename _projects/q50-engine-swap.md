@@ -3,7 +3,6 @@ title: Q50 Engine Swap
 summary: I bought a salvage 2020 Infiniti Q50 whose engine seized about a mile after pickup, sourced a donor engine from another wrecked Q50, and swapped it myself over eight months using the factory service manual.
 category: personal
 status: complete
-featured: 2                 # position on the home page; delete this line to un-feature
 date: 2023-09-01
 role: Sole mechanic, from sourcing to first start
 team: Solo

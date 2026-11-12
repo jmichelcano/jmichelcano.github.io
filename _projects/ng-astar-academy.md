@@ -3,7 +3,7 @@ title: ASTAR Academy at Northrop Grumman
 summary: I went through Northrop Grumman's week-long ASTAR hands-on build training, took over photographing it when the photographer was reassigned, and worked with the media team to get the photos approved for public release. A VP later invited us to present the program.
 category: work
 status: complete
-featured: 5
+featured: 2
 date: 2025-07-15
 role: Trainee, then photographer and videographer for the program
 team: Intern cohort, ASTAR team, and media team

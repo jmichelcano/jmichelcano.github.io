@@ -3,7 +3,7 @@ title: Certification Structures Example
 summary: An interactive Part 25 emergency-landing check for an invented cabin installation, built the same way I write structural substantiation at JBDA. Change the inputs and the margins of safety update live.
 category: work
 status: complete
-featured: 6
+featured: 4
 date: 2026-11-12
 role: Author. Illustrative example, not client work
 team: Solo

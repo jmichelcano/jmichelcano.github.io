@@ -3,7 +3,6 @@ title: F-35 Flight Sim Cockpit
 summary: With a small volunteer team, we turned a non-working simulator in a mock F-35 cockpit, donated by the Kansas Aviation Museum, into a working X-Plane 12 simulator for a local elementary school.
 category: volunteering
 status: complete
-featured: 3
 date: 2026-06-01
 role: Builder (volunteer)
 team: Small volunteer team
