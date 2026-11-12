@@ -25,6 +25,10 @@ highlights:
     label: Random stringer layouts evaluated
 
 videos:
+  - file: optimizer-run.mp4
+    poster: optimizer-run-poster.jpg
+    loop: true
+    caption: My MATLAB program running, plotting each candidate stringer layout on the cross-section as it searches.
   - file: load-test.mp4
     poster: load-test-poster.jpg
     caption: Load test in the Flight Structures Lab. The root is potted and clamped, and the tip load P bends the box upward.
