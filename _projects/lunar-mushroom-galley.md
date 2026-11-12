@@ -9,7 +9,7 @@ role: CAD lead and prototype builder
 team: Team of 5
 timeframe: Fall 2025 · competed November 2025
 tools: [Fusion 360, 3D printing, Laser cutting, Arduino, LCD & keypad, Temperature & humidity sensor, LED grow lighting]
-cover: 17-lit-closeup.jpg
+cover: cover-card.jpg
 hero: 18-final-with-trophy.jpg
 hero_alt: The finished prototype, lit purple, with a spare growing tower beside it and the first-place trophy.
 
