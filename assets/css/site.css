@@ -382,6 +382,7 @@ body:has(.p-next) .site-footer { margin-top: 0; border-top: 0; }
 .contact { padding-top: clamp(80px, 10vw, 140px); display: flex; flex-direction: column; gap: 18px; }
 .contact-email { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-block: 8px 6px; }
 .contact-address { font: 700 clamp(0.95rem, 3.6vw, 2.4rem)/1.1 var(--f-display); font-stretch: 105%; text-decoration: none; overflow-wrap: anywhere; border-bottom: 2px solid var(--accent); padding-bottom: 4px; }
+.contact-note { color: var(--muted); max-width: 60ch; }
 .contact-address:hover { color: var(--accent); }
 
 /* ── Lightbox ────────────────────────────────────── */
