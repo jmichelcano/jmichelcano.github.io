@@ -9,7 +9,8 @@ layout: default
   <header class="p-hero{% if page.hero_style == 'drawing' %} is-drawing{% endif %}{% unless hero %} no-media{% endunless %}">
     {% if hero %}
     <div class="p-hero-media">
-      <img src="{{ media | append: hero | relative_url }}" alt="{{ page.hero_alt | default: page.title | escape }}" data-parallax>
+      {% if page.hero_video %}<video src="{{ media | append: page.hero_video | relative_url }}" poster="{{ media | append: hero | relative_url }}" autoplay muted loop playsinline aria-label="{{ page.hero_alt | default: page.title | escape }}" data-hero-video></video>
+      {% else %}<img src="{{ media | append: hero | relative_url }}" alt="{{ page.hero_alt | default: page.title | escape }}" data-parallax>{% endif %}
     </div>
     {% endif %}
     <div class="wrap p-hero-inner">

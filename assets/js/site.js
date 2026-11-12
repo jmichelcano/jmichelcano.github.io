@@ -32,6 +32,9 @@
       });
     }
 
+    /* Background hero videos stay still for visitors who turn off motion */
+    if (reduce) $$("[data-hero-video]").forEach(function (v) { v.removeAttribute("autoplay"); v.pause(); });
+
     /* Parallax on large images */
     var par = $$("[data-parallax]");
     if (!reduce && par.length) {

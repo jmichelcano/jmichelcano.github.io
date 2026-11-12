@@ -21,6 +21,7 @@ tools: [Fusion, Plasma CNC, MIG welder]
 
 cover: cover.jpg           # photo used on the card and at the top of the page
 # hero: other.jpg          # optional: a different photo for the top of the page
+# hero_video: clip.mp4     # optional: silent looping video behind the title (hero: becomes its still frame)
 # hero_style: drawing     # optional: for a white-background drawing/render, shows it as light lines on dark
 # model: part.glb          # optional: interactive 3D model (see README, section 7)
 # model_poster: part.jpg   # optional: still image shown before the 3D model loads

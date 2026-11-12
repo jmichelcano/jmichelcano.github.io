@@ -9,8 +9,9 @@ team: Hub staff and student makers
 timeframe: Jan 2025 – Aug 2026
 tools: [CNC plasma, Waterjet, Laser cutter, CNC wood mills, Sandblasting, 3D printing, Fusion 360, Slicing, CNC programming]
 cover: cover-plasma.jpg
-hero: 01-plasma-table-slats.jpg
-hero_alt: Looking down the plasma cutting table at its row of steel support slats, with the torch gantry at the far end.
+hero: hero-plasma-poster.jpg
+hero_video: hero-plasma.mp4
+hero_alt: The CNC plasma torch cutting steel, throwing a spray of sparks.
 
 highlights:
   - value: "CAD → part"

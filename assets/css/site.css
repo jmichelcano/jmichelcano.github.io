@@ -288,6 +288,7 @@ h1, h2, h3 { text-wrap: balance; font-weight: 700; }
 .p-hero { position: relative; min-height: clamp(520px, 88svh, 900px); display: flex; align-items: flex-end; overflow: hidden; isolation: isolate; }
 .p-hero-media { position: absolute; inset: 0; z-index: -1; background: var(--surface); }
 .p-hero-media img { width: 100%; height: 115%; object-fit: cover; filter: brightness(.8); }
+.p-hero-media video { width: 100%; height: 100%; object-fit: cover; filter: brightness(.75) saturate(1.05); }
 .p-hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(6,8,9,.55) 0%, rgba(6,8,9,0) 28%, rgba(6,8,9,.35) 60%, var(--bg) 100%); }
 .p-hero.is-drawing .p-hero-media { background: var(--bg); }
 .p-hero.is-drawing .p-hero-media img { object-fit: contain; height: 100%; padding: 84px 5% max(330px, 44vh); filter: invert(1) hue-rotate(180deg) brightness(1.15) contrast(1.05); mix-blend-mode: screen; }
