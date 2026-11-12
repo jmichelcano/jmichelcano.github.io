@@ -99,6 +99,8 @@ layout: default
   {% endif %}
 </article>
 
+{% for s in page.scripts %}<script src="{{ s | relative_url }}" defer></script>
+{% endfor %}
 <dialog class="lightbox" data-lightbox-dialog aria-label="Photo viewer">
   <figure class="lb-figure">
     <img alt="">
